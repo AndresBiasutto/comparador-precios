@@ -1,17 +1,66 @@
-import { GET_PRODUCTS} from "./actions";
+import {
+  GET_PRODUCTS,
+  GET_CARREFOUR,
+  GET_COTO,
+  GET_DIA,
+  CLEAN_DETAIL,
+  SORT_PRODS_CARR,
+  SORT_PRODS_COTO,
+  SORT_PRODS_DIA
+} from "./actions";
 
 const initialState = {
-    products: [],
-
+  products: [],
+  carrefourProducts: {},
+  cotoProducts: {},
+  diaProducts: {},
 };
 
 const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case GET_PRODUCTS:
-            return { ...state, products: action.payload }
-        default:
-            return { ...state };
-    }
-}
+  switch (action.type) {
+    case GET_PRODUCTS:
+      return { ...state, products: action.payload };
+    case GET_CARREFOUR:
+      return { ...state, carrefourProducts: action.payload };
+    case GET_COTO:
+      return { ...state, cotoProducts: action.payload };
+    case GET_DIA:
+      return { ...state, diaProducts: action.payload };
+    case SORT_PRODS_CARR:
+      return {
+        ...state,
+        carrefourProducts: {
+          ...state.carrefourProducts,
+          products: action.payload,
+        },
+      };
+    case SORT_PRODS_COTO:
+      return {
+        ...state,
+        cotoProducts: {
+          ...state.cotoProducts,
+          products: action.payload,
+        },
+      };
+    case SORT_PRODS_DIA:
+      return {
+        ...state,
+        diaProducts: {
+          ...state.diaProducts,
+          products: action.payload,
+        },
+      };
+
+    case CLEAN_DETAIL:
+      return {
+        ...state,
+        diaProducts: action.payload,
+        carrefourProducts: action.payload,
+        cotoProducts: action.payload,
+      };
+    default:
+      return { ...state };
+  }
+};
 
 export default rootReducer;

@@ -1,12 +1,14 @@
 const searchCarrefourProducts = async (page, search) => {
+  await page.setViewport({
+    width: 1600,
+    height: 900,
+  });
   await page.goto("https://www.carrefour.com.ar/");
   await page.waitForSelector(".vtex-styleguide-9-x-input");
   await new Promise((r) => setTimeout(r, 4000));
   await page.type(".vtex-styleguide-9-x-input", search);
   await page.keyboard.press("Enter");
-  await page.waitForSelector(
-    'span[data-specification-group="leyDeGondolas"][data-specification-name="pricePerUnit"]'
-  );
+  await new Promise((s) => setTimeout(s, 7000));
 
   const title = await page.title();
 
@@ -15,6 +17,10 @@ const searchCarrefourProducts = async (page, search) => {
       ".valtech-carrefourar-product-summary-status-0-x-container"
     );
     const products = [];
+    const finalProductList = {
+      store: "Carrefour",
+      products: [],
+    };
 
     nodeList.forEach((node) => {
       const productNameElement = node.querySelector(
@@ -37,21 +43,18 @@ const searchCarrefourProducts = async (page, search) => {
         : "image name not found";
 
       const finalProd = {
-        store: "Carrefour",
-        product: {
-          name: productName,
-          price: productPrize,
-          img: productImg,
-        },
+        name: productName,
+        price: productPrize,
+        img: productImg,
       };
 
       products.push(finalProd);
     });
-
-    return products;
+    finalProductList.products = products;
+    return finalProductList;
   });
 
   return carrefourProducts;
 };
 
-module.exports= searchCarrefourProducts;
+module.exports = searchCarrefourProducts;

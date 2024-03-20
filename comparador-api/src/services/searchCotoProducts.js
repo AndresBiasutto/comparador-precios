@@ -8,6 +8,10 @@ const searchCotoProducts = async (page, search) => {
   const title = await page.title();
 
   const cotoProducts = await page.evaluate(() => {
+    const finalProductList = {
+      store: "Coto",
+      products: [],
+    };
     const nodeList = document.querySelectorAll("#products > .clearfix");
     console.log(nodeList);
     const products = [...nodeList].map((node) => {
@@ -21,16 +25,13 @@ const searchCotoProducts = async (page, search) => {
       const prodImg = node.querySelector("img").src;
 
       return {
-        store: "Coto",
-        product: {
-          name: prodName,
-          price: prodPrice,
-          img: prodImg,
-        },
+        name: prodName,
+        price: prodPrice,
+        img: prodImg,
       };
     });
-    console.log(products);
-    return products;
+    finalProductList.products= products
+    return finalProductList;
   });
 
   return cotoProducts;

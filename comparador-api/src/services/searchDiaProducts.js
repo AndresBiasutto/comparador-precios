@@ -8,6 +8,11 @@ const searchDiaProducts = async (page, search) => {
   const title = await page.title();
 
   const diaProducts = await page.evaluate(() => {
+    const finalProductList = {
+      store: "Dia",
+      products: [],
+    };
+
     const nodeList = document.querySelectorAll(
       ".vtex-search-result-3-x-galleryItem"
     );
@@ -23,18 +28,15 @@ const searchDiaProducts = async (page, search) => {
       ).src;
 
       return {
-        store: "Dia",
-        product: {
-          name: prodName,
-          price: prodPrice,
-          img: prodImg,
-        },
+        name: prodName,
+        price: prodPrice,
+        img: prodImg,
       };
     });
-
-    return products;
+finalProductList.products= products
+    return finalProductList;
   });
 
   return diaProducts;
 };
-module.exports= searchDiaProducts;
+module.exports = searchDiaProducts;

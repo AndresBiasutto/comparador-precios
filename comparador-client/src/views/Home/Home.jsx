@@ -1,52 +1,41 @@
 import styles from "./Home.module.css";
-import { getSearch } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+//import Card from "../../components/card/Card";
+import NavBar from "../../components/NavBar/NavBar";
+//import PriceFilter from "../../components/PriceFilter/PriceFilter";
+import StoreContainer from "../../components/StoreContainer/StoreContainer";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-  const [searchTerm, setSearchTerm] = useState("");
+  const carrefourProds = useSelector((state) => state.carrefourProducts);
+  const diaProds = useSelector((state) => state.diaProducts);
+  const cotoProds = useSelector((state) => state.cotoProducts);
+  const [showMessage, setShowMessage] = useState(true);
+  const searchIsStarted =
+    Object.keys(carrefourProds).length !== 0 ||
+    Object.keys(diaProds).length !== 0 ||
+    Object.keys(cotoProds).length !== 0;
 
   useEffect(() => {
-    console.log(products);
-  }, [products]);
-
-  const handleSearch = () => {
-    if (searchTerm.trim() !== "") {
-      dispatch(getSearch(searchTerm));
+    if (searchIsStarted) {
+      setShowMessage(false);
     }
-  };
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  }, [carrefourProds, cotoProds, diaProds, searchIsStarted]);
 
   return (
     <section>
-      <nav className={styles.navBar}>
-        <div>logo</div>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder="Ingrese término de búsqueda"
-        />
-        <button onClick={handleSearch}>Buscar</button>
-      </nav>
-      <div>
-      {products.map((storeProducts, index) => (
-          <div key={index}>
-            <h3>{storeProducts[0].store}</h3>
-            {storeProducts.map((product, productIndex) => (
-              <div key={productIndex}>
-                <p>{product.product.name}</p>
-                <p>{product.product.price}</p>
-                <img src={product.product.img} alt={product.product.name} />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+      <NavBar />
+      {searchIsStarted ? (
+        <div className={styles.stotreBox}>
+          <StoreContainer store={diaProds} />
+          <StoreContainer store={carrefourProds} />
+          <StoreContainer store={cotoProds} />
+        </div>
+      ) : showMessage ? (
+        "que precios querés comparar?"
+      ) : (
+        "buscando"
+      )}
     </section>
   );
 };

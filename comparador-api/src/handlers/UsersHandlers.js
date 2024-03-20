@@ -30,5 +30,14 @@ const postUserHandler = async (req, res) => {
       res.status(404).json({ error: error.message });
     }
   }
+  const searchCotoHandler= async (req, res)=>{
+    const search= req.params.search
+    try {
+      const result= await findCotoProducts(search)
+      res.status(200).json(result)
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  }
 
-module.exports={getUserHandler, postUserHandler, searchProductHandler}
+module.exports={getUserHandler, postUserHandler, searchProductHandler, searchCotoHandler}
