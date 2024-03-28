@@ -20,14 +20,17 @@ const searchCotoProducts = async (page, search) => {
       const prodPriceNode = node.querySelector(
         ".atg_store_productPrice > .atg_store_newPrice"
       );
+      const prodImg = node.querySelector("img").src;
+      const prodLink= node.querySelector(".product_info_container > a").href
       const prodPriceText = prodPriceNode.textContent.trim(); // Eliminar espacios en blanco al inicio y final
       const prodPrice = prodPriceText.replace(/\n/g, ""); // Eliminar todos los caracteres que no sean dígitos
-      const prodImg = node.querySelector("img").src;
+
 
       return {
         name: prodName,
         price: prodPrice,
         img: prodImg,
+        link: prodLink
       };
     });
     finalProductList.products= products

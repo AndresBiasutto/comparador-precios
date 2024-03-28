@@ -3,6 +3,7 @@ import styles from "./PriceFilter.module.css";
 import { useDispatch } from "react-redux";
 import { sortCarrefourProds, sortCotoProds, sortDiaProds } from "../../redux/actions";
 import PropTypes from "prop-types";
+import { TbPigMoney } from "react-icons/tb";
 
 const PriceFilter = (props) => {
   const dispatch = useDispatch();
@@ -37,7 +38,7 @@ const PriceFilter = (props) => {
   return (
     <section className={styles.priceFilter}>
       <div>
-        <button onClick={handleSort}>menor precio</button>
+        <button className={styles.button} onClick={handleSort}>menor precio <TbPigMoney className={styles.pig} /></button>
       </div>
     </section>
   );

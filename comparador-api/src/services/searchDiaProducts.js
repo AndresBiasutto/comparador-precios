@@ -26,11 +26,15 @@ const searchDiaProducts = async (page, search) => {
       const prodImg = node.querySelector(
         ".vtex-product-summary-2-x-imageNormal"
       ).src;
+      const prodLink= node.querySelector(
+        ".vtex-product-summary-2-x-clearLink"
+      ).href
 
       return {
         name: prodName,
         price: prodPrice,
         img: prodImg,
+        link: prodLink
       };
     });
 finalProductList.products= products

@@ -1,34 +1,11 @@
-.navBar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-}
+
 .stotreBox{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    height: 100%;
+    padding: 0;
+    height: 85vh;
     width: 100%;
     gap: 20px;
-}
-.picture{
-    height: 150px;
-    width: 150px;
-    border-radius: 500px;
-}
-.card{
-    height: 340px;
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid white;
-    border-radius: 20px;
 }

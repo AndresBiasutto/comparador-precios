@@ -14,7 +14,7 @@ const searchCarrefourProducts = async (page, search) => {
 
   const carrefourProducts = await page.evaluate(() => {
     const nodeList = document.querySelectorAll(
-      ".valtech-carrefourar-product-summary-status-0-x-container"
+      ".vtex-product-summary-2-x-container > a"
     );
     const products = [];
     const finalProductList = {
@@ -32,20 +32,27 @@ const searchCarrefourProducts = async (page, search) => {
       const productImgElement = node.querySelector(
         ".vtex-product-summary-2-x-image"
       );
+      const productLinkElement = node.querySelector(
+        "a"
+      );
       const productName = productNameElement
         ? productNameElement.innerText.trim()
-        : "Product name not found";
+        : "Product not found";
       const productPrize = productPrizeElement
         ? productPrizeElement.innerText.trim()
-        : "Prize name not found";
+        : "Prize not found";
       const productImg = productImgElement
         ? productImgElement.src
-        : "image name not found";
+        : "image not found";
+      const productLink = productLinkElement
+        ? productLinkElement.href
+        : "link not found";
 
       const finalProd = {
         name: productName,
         price: productPrize,
         img: productImg,
+        link: productLink,
       };
 
       products.push(finalProd);

@@ -7,6 +7,7 @@ export const GET_DIA = "GET_DIA";
 export const SORT_PRODS_CARR = "SORT_PRODS_CARR";
 export const SORT_PRODS_COTO = "SORT_PRODS_COTO";
 export const SORT_PRODS_DIA = "SORT_PRODS_DIA";
+export const FAVORITES = "FAVORITES";
 
 export const CLEAN_DETAIL = "CLEAN_DETAIL";
 
