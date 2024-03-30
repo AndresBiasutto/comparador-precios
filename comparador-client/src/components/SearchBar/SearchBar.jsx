@@ -9,6 +9,7 @@ import {
 } from "../../redux/actions";
 import { FaSearchDollar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { clearList } from "../../redux/actions";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -21,11 +22,14 @@ const SearchBar = () => {
       dispatch(getDiaProds(searchTerm));
       dispatch(getCotoProds(searchTerm));
     }
+      dispatch(clearList())
   };
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  
 
   return (
     <div className={`flex-center-row ${styles.searchBar}` }>

@@ -1,11 +1,17 @@
-
+.home{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+}
 .stotreBox{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
-    padding: 0;
+    justify-content: flex-start;
+    margin-left: 10px;
     height: 85vh;
-    width: 100%;
+    width: 80%;
     gap: 20px;
 }

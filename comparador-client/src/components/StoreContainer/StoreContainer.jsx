@@ -24,6 +24,7 @@ const StoreContainer = (props) => {
             <div key={index}>
               <Card
                 key={index}
+                store={store.store}
                 name={prod.name}
                 price={prod.price}
                 picture={prod.img}

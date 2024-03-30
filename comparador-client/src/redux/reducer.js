@@ -6,7 +6,9 @@ import {
   CLEAN_DETAIL,
   SORT_PRODS_CARR,
   SORT_PRODS_COTO,
-  SORT_PRODS_DIA
+  SORT_PRODS_DIA,
+  ADD_PRODUCT,
+  CLEAR_LIST,
 } from "./actions";
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   carrefourProducts: {},
   cotoProducts: {},
   diaProducts: {},
+  selectedProducts: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -26,6 +29,16 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, cotoProducts: action.payload };
     case GET_DIA:
       return { ...state, diaProducts: action.payload };
+      case CLEAR_LIST:
+        return {
+          ...state,
+          selectedProducts: [],
+        };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        selectedProducts: [...state.selectedProducts, action.payload],
+      };
     case SORT_PRODS_CARR:
       return {
         ...state,

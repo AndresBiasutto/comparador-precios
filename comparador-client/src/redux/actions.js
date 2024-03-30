@@ -8,8 +8,9 @@ export const SORT_PRODS_CARR = "SORT_PRODS_CARR";
 export const SORT_PRODS_COTO = "SORT_PRODS_COTO";
 export const SORT_PRODS_DIA = "SORT_PRODS_DIA";
 export const FAVORITES = "FAVORITES";
-
+export const ADD_PRODUCT= "ADD_PRODUCT";
 export const CLEAN_DETAIL = "CLEAN_DETAIL";
+export const CLEAR_LIST= "CLEAR_LIST"
 
 //const server= "https://back-end-dogs-ok.onrender.com/dogs"
 const local = "http://localhost:3001/user/";
@@ -56,3 +57,10 @@ export const sortDiaProds = (prods) => {
 export const cleanDetail = () => {
   return { type: CLEAN_DETAIL , payload: {}};
 };
+export const addProduct = (product) => ({
+  type: ADD_PRODUCT,
+  payload: product
+});
+export const clearList = () => ({
+  type: CLEAR_LIST,
+});

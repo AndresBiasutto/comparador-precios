@@ -10,16 +10,18 @@
   position: relative;
   top: 0;
   left: 0;
-  height: 340px;
-  width: 250px;
+  height: 320px;
+  width: 200px;
   border-radius: 20px;
-  background-color: var(--ligthBlue);
+  background-color: var(--darkBlue);
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  
+  border: 1px solid var(--white);
 }
 .card:hover{
-    background-color: var(--darkBlue);
-    border: 1px solid var(--white);
+    background-color: var(--ligthBlue);
+    border: none;
 }
 .buttons {
   position: absolute;
@@ -91,7 +93,7 @@
 }
 .picture {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 150px;
@@ -104,7 +106,7 @@
 .name{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 16%;
+    top: 18%;
     left: 50%;
     width: 100%;
 }
