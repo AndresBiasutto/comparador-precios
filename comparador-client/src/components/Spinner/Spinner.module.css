@@ -1,11 +1,18 @@
+.spiner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
 .loader {
     width: 48px;
     height: 48px;
-    border: 2px solid #FFF;
-    border-radius: 50%;
     display: inline-block;
     position: relative;
     box-sizing: border-box;
+    background-image: url("../../assets/LOGOmONO.svg");
+    background-size: contain;
     animation: rotation 1s linear infinite;
   }
   .loader::after {
@@ -14,9 +21,7 @@
     position: absolute;
     left: 50%;
     top: 0;
-    background: #FF3D00;
-    width: 3px;
-    height: 24px;
+
     transform: translateX(-50%);
   }
       

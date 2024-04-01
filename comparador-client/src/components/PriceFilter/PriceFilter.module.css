@@ -2,7 +2,7 @@
     width: 100%;
 }
 .button{
-    background-color: var(--green);
+    background-color: var(--ligthBlue);
     width: 100%;
     color: var(--white);
     display: flex;

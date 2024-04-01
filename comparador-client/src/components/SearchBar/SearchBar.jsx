@@ -32,19 +32,19 @@ const SearchBar = () => {
   
 
   return (
-    <div className={`flex-center-row ${styles.searchBar}` }>
+    <form className={`flex-center-row ${styles.searchBar}` }>
       <input
         className={styles.input}
         type="search"
         name="search"
         value={searchTerm}
         onChange={handleChange}
-        placeholder="Ya busque algo joben"
+        placeholder="Ya, busque algo joven"
       />
       <Link to="/home" className= {`flex-center ${ styles.link}`}>
         <button className={`flex-center ${styles.button}` } onClick={handleSearch}><FaSearchDollar className={styles.glass} /></button>
       </Link>
-    </div>
+    </form>
   );
 };
 

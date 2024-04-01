@@ -2,7 +2,10 @@ import styles from "./Spinner.module.css"
 
 const Spinner = () => {
   return (
-    <span className={styles.loader}></span>
+    <div className={styles.spiner}>
+          <span className={styles.loader}></span>
+    </div>
+
   )
 }
 

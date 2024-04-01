@@ -26,7 +26,7 @@ const Compare = () => {
     <div className={styles.compareContainer}>
       <h2>comparador</h2>
       <div className={styles.compareVar}>
-        <button onClick={cleanList} >limpiar lista</button>
+        <button className={styles.button} onClick={cleanList} >limpiar lista</button>
         {selectedProducts? sortedProducts.map((prod, index) => (
           <MiniCard
             key={index}

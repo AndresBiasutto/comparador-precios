@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
 .cardContainer {
   position: relative;
   height: 100%;
@@ -6,107 +10,103 @@
   left: 0;
   margin-top: 15px;
 }
-.card {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: 320px;
-  width: 200px;
-  border-radius: 20px;
-  background-color: var(--darkBlue);
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  
-  border: 1px solid var(--white);
-}
-.card:hover{
-    background-color: var(--ligthBlue);
-    border: none;
-}
-.buttons {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-  background: rgb(18, 18, 18);
-  background: linear-gradient(
-    0deg,
-    rgba(18, 18, 18, 0) 11%,
-    rgba(1, 35, 64, 1) 99%
-  );
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 5px;
-}
-.card:hover .buttons {
-  top: 0;
-  left: 0;
-}
-.link {
-  padding: 0;
-  color: var(--white);
-  border-radius: 100px;
-  height: 40px;
-  width: 40px;
+.container {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: #01234026;;
+  border-radius: 12px;
+  border: 1px solid #0487d933;  
+  padding: 15px;  
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: var(--green);
-  font-size: 12px;
-  border: none;
-  transition: all 0.2s ease;
-}
-.link:hover {
-  border: 1px solid var(--white);
-}
-.compare {
-  color: var(--white);
-  border-radius: 100px;
-  height: 40px;
-  width: 40px;
-  padding: 5px;
-  background-color: var(--ligthBlue);
-  font-size: 12px;
-  transition: all 0.2s ease-in-out;
-}
-.compare:hover {
-  border: 1px solid var(--white);
-}
-.price {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  bottom: 0%;
-  left: 50%;
-  font-family: "Anton", sans-serif;
-  transition: all 0.3s ease-in-out;
-}
-.card:hover .price {
-  transform: translate(-50%, -50%) scale(2);
-  color: var(--red);
-  bottom: 0%;
-  left: 50%;
-}
-.picture {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 150px;
-  width: 150px;
-  border-radius: 20px;
-  object-fit: cover;
-  transition: all 0.3s ease-in-out;
+  justify-content:center;
+  text-align: center;
+  
 }
 
-.name{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 18%;
-    left: 50%;
-    width: 100%;
+.wrapper {
+  width: 200px;
+  height: 100%;
+  
+}
+
+.banner_image {
+  background-position: center;
+  background-size: cover;
+  height: 100px;
+  width: 120px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255, 0.255)
+}
+
+.h2{
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255,255,255,0.98);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: var(--red);
+  transition: all .3s ease;
+}
+.container:hover .h2{
+  transform: scale(1.2);
+}
+
+p {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.button_wrapper{
+  margin-top: 18px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;  
+  letter-spacing: 2px;  
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  transition: all .3s ease;
+  
+}
+
+.outline:hover{
+  transform: scale(1.125);
+  color: var(--ligthBlue);
+  border-color: var(--ligthBlue);
+  transition: all .3s ease;  
+}
+
+.fill {
+  background: var(--darkBlue);
+  color: var(--white);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease; 
+}
+
+.fill:hover{
+  transform: scale(1.125);  
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+  transition: all .3s ease;    
 }
