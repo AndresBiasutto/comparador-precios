@@ -23,9 +23,12 @@ Breve descripción de lo que hace tu aplicación.
 
 ### Paso 1: Clonar el Repositorio
 ```bash
-git clone https://github.com/tuusuario/nombre-de-tu-repo.git
+git clone https://github.com/AndresBiasutto/comparador-precios
+```
 
-
-### Paso 1: Clonar el Repositorio
+### Paso 2: Instalar Dependencias
+Navega hasta el directorio del proyecto y ejecuta:
 ```bash
-git clone https://github.com/tuusuario/nombre-de-tu-repo.git
+cd nombre-de-tu-repo
+npm install
+```
