@@ -1,6 +1,6 @@
 # La doña sabe (comparador de precios)
 
-(https://github.com/AndresBiasutto/comparador-precios/blob/main/comparador-client/src/assets/LOGO.svg){: style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 400px;"}
+![Texto alternativo de la imagen](https://github.com/AndresBiasutto/comparador-precios/blob/main/comparador-client/src/assets/LOGO.svg){: style="display: block; margin-left: auto; margin-right: auto; width: 400px; height: 400px;"}
 
 
 ## Descripción
