@@ -24,3 +24,8 @@ Breve descripción de lo que hace tu aplicación.
 ### Paso 1: Clonar el Repositorio
 ```bash
 git clone https://github.com/tuusuario/nombre-de-tu-repo.git
+
+
+### Paso 1: Clonar el Repositorio
+```bash
+git clone https://github.com/tuusuario/nombre-de-tu-repo.git
