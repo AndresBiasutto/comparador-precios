@@ -1,13 +1,13 @@
-# La doña sabe (comparador de precios) / (price comparator)
+# La doña sabe (comparador de precios / price comparator)
 
 <p align="center">
   <img src="https://github.com/AndresBiasutto/comparador-precios/blob/main/comparador-client/src/assets/LOGO.svg" width="400" height="400">
 </p>
 
-## 🇪🇸 Descripción en Español
+## 🇪🇸 Descripción
 Aplicación creada para encontrar los precios más bajos entre las tiendas virtuales de las cadenas de supermercados más grandes de Argentina.
 
-## 🇬🇧 Description in English
+## 🇬🇧 Description
 Application created to find the lowest prices among the online stores of the largest supermarket chains in Argentina.
 
 ## Tecnologías Utilizadas / Technologies Used
